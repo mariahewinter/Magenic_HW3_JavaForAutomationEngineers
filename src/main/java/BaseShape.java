@@ -27,6 +27,15 @@ public abstract class BaseShape {
      * @param height The height of the shape
      */
     public BaseShape(String shapeName, double length, double height) {
+        if(length >= 1){
+            this.setLength(length);
+        }
+
+        if(height >= 1){
+            this.setHeight(height);
+        }
+
+        this.setShapeName(shapeName);
     }
 
     /**
@@ -37,6 +46,10 @@ public abstract class BaseShape {
         return shapeName;
     }
 
+    public void setShapeName(String shapeName){
+        this.shapeName = shapeName;
+    }
+
     /**
      * Gets the length
      * @return The length
@@ -45,12 +58,24 @@ public abstract class BaseShape {
         return length;
     }
 
+    public void setLength(double length){
+        if(length >= 1){
+            this.length = length;
+        }
+    }
+
     /**
      * Gets the height
      * @return The height
      */
     public double getHeight() {
         return height;
+    }
+
+    public void setHeight(double height){
+        if(height >= 1){
+            this.height = height;
+        }
     }
 
     // TODO FOR HOMEWORK: Create Setters for each of the above properties of BaseShape and make sure the scope is correct
